@@ -17,8 +17,7 @@ public class PrincipalMario {
 		do {
 		Scanner opcionCaptura =new Scanner(System.in);
 		MENU();
-		opcion=opcionCaptura.nextInt();
-		
+		opcion=opcionCaptura.nextInt();		
 		switch (opcion) {
 		case 1: 
 			//Se llama al metodo de crear cuenta y se añade a la base de datos.
@@ -30,12 +29,13 @@ public class PrincipalMario {
 			listaCcc=cuenta.IngresarDinero(listaCcc);
 			break;
 		case 3:
+			//sacar dinero
 			listaCcc=cuenta.SacarDinero(listaCcc);
 			break;
 		case 4:
+			//mostrar los datos de las cuentas
 			System.out.println(cuenta.MostrarCuenta(listaCcc));
-			break;
-	
+			break;	
 		case 5:
 			System.out.println("Gracias por usar la aplicación del banco");
 		}
@@ -47,6 +47,7 @@ public class PrincipalMario {
 //		}
 
 	}
+	//metodo que muestra un menu orientativo
 	static void MENU() {
 		//método que muestra el menu de la aplicacion por pantalla
 		System.out.println("-----MENÚ-----");

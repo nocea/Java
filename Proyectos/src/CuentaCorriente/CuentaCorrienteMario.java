@@ -71,15 +71,18 @@ public class CuentaCorrienteMario {
 		else System.err.println("No se ha podido encontrar la cuenta con DNI: "+buscaDNI);
 		return bd;	
 	}
+	//3.Retirar dinero
 	public List<CuentaCorrienteMario> SacarDinero (List<CuentaCorrienteMario> bd){
 		Scanner encontrarDNI=new Scanner(System.in);
 		System.out.println("Introduce su dni: ");
 		String buscaDNI=encontrarDNI.next();
+		//comprueba que el dni este en la base de datos
 		if(BuscaCuenta(buscaDNI,bd)) {
 			Scanner retirar=new Scanner(System.in);
 			System.out.print("Introduce el saldo a retirar: ");
 			double saldoRetirar=retirar.nextDouble();
 			double saldoCuenta=bd.get(contador).getSaldo();
+			//se resta el saldo que quiere retirar al saldo actual de la cuenta.
 			double saldoFinal=saldoCuenta-saldoRetirar;
 			bd.get(contador).setSaldo(saldoFinal);
 			System.out.println("Ha retirado "+saldoRetirar+" euros");
@@ -87,8 +90,8 @@ public class CuentaCorrienteMario {
 		else System.err.println("No se ha podido encontrar la cuenta con DNI: "+buscaDNI);
 		return bd;
 	}
-	
-	public boolean BuscaCuenta (String DNI,List<CuentaCorrienteMario> bd) {
+	//Metodo que se utiliza para poder buscar la cuenta por el dni introducido.
+	private boolean BuscaCuenta (String DNI,List<CuentaCorrienteMario> bd) {
 		//se declara un contador a 0
 		contador=0;
 		//recorro la lista en busca del dni que sea igual en ella.
@@ -106,17 +109,20 @@ public class CuentaCorrienteMario {
 		}
 		return false;
 	}
+	//4.Muestra los datos de las cuentas que hay en la base de datos
 	public String MostrarCuenta(List<CuentaCorrienteMario> bd){
 		String datos="";
 		Scanner encontrarDNI=new Scanner(System.in);
 		System.out.println("Introduzca su dni: ");
 		String buscaDNI=encontrarDNI.next();
+		//si busca cuenta es verdadero muestra los datos de la cuenta
 		if(BuscaCuenta(buscaDNI,bd)) {
 			String dni=bd.get(contador).getDni();
 			String nombre=bd.get(contador).getNombreTitular();
 			double saldo=bd.get(contador).getSaldo();
 			datos=("Numero DNI: "+dni+"; NombreCompleto: "+nombre+"; Saldo: "+saldo);	 
 		}
+		//si no da el siguiente error
 		else System.err.println("No se ha encontrado la cuenta.");
 		return datos;
 	}
