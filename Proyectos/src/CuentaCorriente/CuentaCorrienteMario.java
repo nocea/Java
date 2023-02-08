@@ -32,7 +32,7 @@ public class CuentaCorrienteMario {
 	//Métodos
 	//1.Crear una cuenta
 	public CuentaCorrienteMario CrearCuenta() {
-		//se crea una nueva cuenta con un nombre
+		//constructor vacio
 		CuentaCorrienteMario CuentaVacia=new CuentaCorrienteMario();
 		//se piden los datos que faltan
 		Scanner scan =new Scanner(System.in);
