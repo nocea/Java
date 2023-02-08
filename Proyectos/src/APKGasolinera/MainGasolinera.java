@@ -43,7 +43,7 @@ public class MainGasolinera {
 		System.out.println("1-->Repostaje Normal");
 		System.out.println("2-->Repostaje factura");
 		System.out.println("3-->Ver todos los repostajes");
-		System.out.println("4--->Salir de la Gasolinera");
+		System.out.println("4-->Salir de la Gasolinera");
 	}
 
 }
