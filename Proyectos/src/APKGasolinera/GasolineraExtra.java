@@ -146,6 +146,7 @@ public class GasolineraExtra {
 			}
 				break;
 			case 3:
+				System.out.println("--------Todos los repostajes--------");
 				for (int y = 0; y < bd.size(); y++) {
 					importe=bd.get(y).getImporte();
 					litros=bd.get(y).getLitros();
@@ -160,12 +161,77 @@ public class GasolineraExtra {
 		}
 	public List<GasolineraExtra> EliminarRepostaje(List<GasolineraExtra> bd){
 		int idIntroducir;
-		System.out.println("Introduce el id del repostaje que desea eliminar:");
-		Scanner scanFecha=new Scanner(System.in);
-		idIntroducir=scanFecha.nextInt();
+		System.out.print("Introduce el id del repostaje que desea eliminar:");
+		Scanner scanID=new Scanner(System.in);
+		idIntroducir=scanID.nextInt();
 		bd.remove(idIntroducir);
 		return bd;
 	}
-	//FALTA EL METODO PARA MODIFICAR UN REPOSTAJE
+	//Modificar un repostaje
+	public List<GasolineraExtra> ModificarRepostaje(List<GasolineraExtra> bd){
+		//Se pide que repostaje se quiere modificar
+		int idIntroducir;
+		int modificar;
+		System.out.print("Introduzca el id del repostaje para modificarlo: ");
+		Scanner scanID=new Scanner(System.in);
+		idIntroducir=scanID.nextInt();
+		//Se pide que se necesita modificar del repostaje
+		System.out.println("¿Qué necesita modificar del repostaje?");
+		System.out.println("1-->Litros");
+		System.out.println("2-->Importe");
+		System.out.println("3-->DNI");
+		System.out.println("4-->Matricula");
+		Scanner scanOpcion=new Scanner(System.in);
+		modificar=scanOpcion.nextInt();
+		switch (modificar) {
+		//En cada caso muestro el valor actual de cada campo y pido el nuevo valor,posteriormente lo actualizo.
+		case 1:
+			Scanner scanLitros=new Scanner(System.in);
+			double nuevosLitros;
+			System.out.println("Litros actuales--> "+bd.get(idIntroducir).getLitros());
+			System.out.print("Introduzca el nuevo valor: ");
+			nuevosLitros=scanLitros.nextDouble();
+			bd.get(idIntroducir).setLitros(nuevosLitros);
+			
+			break;
+		case 2:
+			Scanner scanImporte=new Scanner(System.in);
+			double nuevoImporte;
+			System.out.println("Importe actual--> "+bd.get(idIntroducir).getImporte());
+			System.out.print("Introduzca el nuevo valor: ");
+			nuevoImporte=scanImporte.nextDouble();
+			bd.get(idIntroducir).setImporte(nuevoImporte);
+			
+			break;
+		case 3:
+			Scanner scanDNI=new Scanner(System.in);
+			String nuevoDNI;
+			System.out.println("Dni actual--> "+bd.get(idIntroducir).getDni());
+			System.out.print("Introduzca el nuevo valor: ");
+			nuevoDNI=scanDNI.next();
+			bd.get(idIntroducir).setDni(nuevoDNI);
+			//Lo cambio para que sea factura para que al mostrarlo aparezca en la lista de repostajes con factura si no lo era antes.
+			bd.get(idIntroducir).setFacturaONormal(true);
+				
+			break;
+		case 4:
+			Scanner scanMatricula=new Scanner(System.in);
+			String nuevoMatricula="";
+			System.out.println("Matricula actual--> "+bd.get(idIntroducir).getMatricula());
+			System.out.print("Introduzca el nuevo valor: ");
+			nuevoDNI=scanMatricula.next();
+			bd.get(idIntroducir).setMatricula(nuevoMatricula);
+			bd.get(idIntroducir).setFacturaONormal(true);
+			
+			break;
+		}
+		//actualizo la fecha a cuando se ha hecho la modificación.
+		bd.get(idIntroducir).setFecha(DateTimeFormatter.ofPattern("dd MMM yyyy, hh:mm:ss a").format(LocalDateTime.now()));
+		System.out.println("!Cambiado¡");	
+		
+		
+		return bd;
+	}
+	
 	}
 

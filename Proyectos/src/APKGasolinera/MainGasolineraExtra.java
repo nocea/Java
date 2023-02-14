@@ -30,13 +30,13 @@ public class MainGasolineraExtra {
 						break;
 					case 3:
 						//modificar un repostaje
+						nuevaGasolinera.ModificarRepostaje(repostajes);					
 						break;
 					case 4:
 					//eliminar un repostaje
 						nuevaGasolinera.EliminarRepostaje(repostajes);
 						break;
 					case 5:
-					
 						//ver todos los repostajes
 						nuevaGasolinera.VerRepostajes(repostajes);
 						break;
@@ -45,6 +45,7 @@ public class MainGasolineraExtra {
 					System.out.println("Gracias por usar la gasolinera");
 						break;
 				}
+			
 			}while(opcion!=6);							
 	}
 	//metodo simple que muestra un menu orientativo.
