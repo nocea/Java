@@ -29,15 +29,16 @@ public class MainGasolineraExtra {
 					repostajes.add(nuevaGasolinera.RepostajeFactura());
 						break;
 					case 3:
-					//ver todos los repostajes
-					nuevaGasolinera.VerRepostajes(repostajes);
+						//modificar un repostaje
 						break;
 					case 4:
 					//eliminar un repostaje
 						nuevaGasolinera.EliminarRepostaje(repostajes);
 						break;
 					case 5:
-					//modificar un repostaje
+					
+						//ver todos los repostajes
+						nuevaGasolinera.VerRepostajes(repostajes);
 						break;
 					case 6:	
 					//salir de la aplicacion
@@ -51,9 +52,9 @@ public class MainGasolineraExtra {
 		System.out.println("--------MENU--------");
 		System.out.println("1-->Repostaje Normal");
 		System.out.println("2-->Repostaje factura");
-		System.out.println("3-->Ver todos los repostajes");
-		System.out.println("4-->Eliminar un repostaje");
-		System.out.println("5-->Modificar un repostaje");
+		System.out.println("3-->Modificar un repostaje");
+		System.out.println("4-->Eliminar un repostaje");		
+		System.out.println("5-->Ver todos los repostajes");
 		System.out.println("6-->Salir de la Gasolinera");
 		System.out.print("Introduzca la opcion: ");
 	}
