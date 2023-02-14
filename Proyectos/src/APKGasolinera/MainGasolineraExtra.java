@@ -11,7 +11,7 @@ public class MainGasolineraExtra {
 	public static void main(String[] args) {
 		//instancio la clase nueva
 		GasolineraExtra nuevaGasolinera=new GasolineraExtra();
-		//creo la lista que usare como base de datos momentanea.
+		//creo la lista que usare como base de datos temporal.
 		List<GasolineraExtra> repostajes =new ArrayList<GasolineraExtra>();
 		int opcion=0;
 		do {

@@ -166,5 +166,6 @@ public class GasolineraExtra {
 		bd.remove(idIntroducir);
 		return bd;
 	}
+	//FALTA EL METODO PARA MODIFICAR UN REPOSTAJE
 	}
 
