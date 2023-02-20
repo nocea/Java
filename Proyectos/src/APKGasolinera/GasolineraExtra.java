@@ -200,7 +200,7 @@ public class GasolineraExtra {
 			System.out.println("Importe actual--> "+bd.get(idIntroducir).getImporte());
 			System.out.print("Introduzca el nuevo valor: ");
 			nuevoImporte=scanImporte.nextDouble();
-			bd.get(idIntroducir).setImporte(nuevoImporte);
+			bd.get(idIntroducir).setImporte(nuevoImporte); 
 			
 			break;
 		case 3:
