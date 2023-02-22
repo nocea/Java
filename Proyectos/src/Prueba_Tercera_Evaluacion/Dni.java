@@ -23,12 +23,12 @@ public class Dni {
 	public Dni GeneraDni() {
 		Dni dniNuevo=new Dni();
 		char [] arrayLetras={'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'};
-		int numeroDni;
-		do {
+		int numeroDni=-1;
+		while(numeroDni<0||numeroDni>99999999) {
 			System.out.println("Introduce un nuevo numero de dni");
 			Scanner scanDni=new Scanner(System.in);
 			numeroDni=scanDni.nextInt();
-		}while(numeroDni<0||numeroDni>99999999);
+		}
 		
 			int numeroLetra=numeroDni%23;
 			char letraSeleccionada=arrayLetras[numeroLetra];
