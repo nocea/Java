@@ -7,4 +7,6 @@ public interface InterfazMenu {
 /*
  * En la interfaz solo se definen las cabeceras de los metodos.
  */
+	public void MENU();
+	
 }
