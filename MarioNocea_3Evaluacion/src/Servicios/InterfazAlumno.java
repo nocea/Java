@@ -1,5 +1,5 @@
 package Servicios;
-import java.util.List;
+import java.util.List; 
 
 import Entidades.Alumnos;
 public interface InterfazAlumno {
